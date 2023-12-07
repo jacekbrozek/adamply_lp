@@ -829,12 +829,12 @@ h2 {
   display: flex;
 }
 
-.frame-46 form {
+#sign-up form {
   grid-column-gap: 23px;
   display: flex;
 }
 
-.frame-46 form label {
+#sign-up form label {
   color: var(--dblue);
   font-family: Poppins, sans-serif;
   font-size: 1rem;
@@ -842,7 +842,7 @@ h2 {
   line-height: 130%;
 }
 
-.frame-46 form input {
+#sign-up form input {
   -webkit-text-size-adjust: 100%;
   --dblue: #0d1b28;
   --adblue: #3567e8;
@@ -866,7 +866,7 @@ h2 {
   line-height: 21px;
 }
 
-.frame-46 form button {
+#sign-up form button {
   -webkit-text-size-adjust: 100%;
   --dblue: #0d1b28;
   --adblue: #3567e8;
@@ -886,7 +886,7 @@ h2 {
   box-shadow: 0 6px 55.3px rgba(53, 103, 232, .37);
 }
 
-.frame-46 form button span {
+#sign-up form button span {
   color: #3567e8;
   text-align: center;
   font-family: Poppins, sans-serif;
