@@ -34,7 +34,7 @@
     // JavaScript to send events on scroll breakpoints
 
     function sendEvent(eventName) {
-      plausible('Scroll Depth', { breakpoint: eventName })
+      plausible('Scroll Depth', { props: { breakpoint: eventName } })
     }
 
     // Variables to keep track of whether the event has already been sent
