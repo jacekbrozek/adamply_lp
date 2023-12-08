@@ -28,7 +28,50 @@
   </script>
   <!-- End GetResponse Analytics -->
 
-  <script defer data-domain="adamply.com" src="https://plausible.io/js/script.js"></script>
+  <script defer data-domain="adamply.com" src="https://plausible.io/js/script.tagged-events.js"></script>
+
+  <script defer type="text/javascript">
+    // JavaScript to send events on scroll breakpoints
+
+    function sendEvent(eventName) {
+      plausible('Scroll Depth', { breakpoint: eventName })
+    }
+
+    // Variables to keep track of whether the event has already been sent
+    let hasSent25 = false;
+    let hasSent50 = false;
+    let hasSent75 = false;
+    let hasSent100 = false;
+
+    // Function to check the scroll position and send events
+    function checkScrollBreakpoints() {
+        const scrollPosition = window.scrollY; // Current scroll position
+        const totalHeight = document.documentElement.scrollHeight - window.innerHeight; // Total scrollable height
+
+        const scrollPercent = (scrollPosition / totalHeight) * 100; // Calculate the scroll percentage
+
+        // Trigger events based on scroll percentage
+        if (scrollPercent >= 25 && !hasSent25) {
+            sendEvent("Scrolled 25%");
+            hasSent25 = true;
+        }
+        if (scrollPercent >= 50 && !hasSent50) {
+            sendEvent("Scrolled 50%");
+            hasSent50 = true;
+        }
+        if (scrollPercent >= 75 && !hasSent75) {
+            sendEvent("Scrolled 75%");
+            hasSent75 = true;
+        }
+        if (scrollPercent >= 100 && !hasSent100) {
+            sendEvent("Scrolled 100%");
+            hasSent100 = true;
+        }
+    }
+
+    // Add the scroll event listener
+    window.addEventListener('scroll', checkScrollBreakpoints);
+  </script>
 
   <meta property="og:image" content="https://lh3.googleusercontent.com/u/0/drive-viewer/AK7aPaD4cazNBexn_fhkETcGey9kcRiQdQ-W3WAR85FG11zCS46HeV4jQZd65QlEL3snKb9qSfZTIBDjxlAZ4alW0dMv32UsXg=w3360-h1774">
 </head>
